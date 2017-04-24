@@ -1,6 +1,8 @@
-﻿namespace swift
+﻿using System.Windows.Forms;
+
+namespace transliter_RUENGRU
 {
-    partial class fMain
+    partial class Form1 : Form
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,71 +30,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.транслитерацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rUENGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eNGRUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.журналToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.strIn = new System.Windows.Forms.TextBox();
+            this.strOut = new System.Windows.Forms.TextBox();
+            this.clean = new System.Windows.Forms.Button();
+            this.transliter = new System.Windows.Forms.Button();
+            this.engTranslit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // strIn
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.транслитерацияToolStripMenuItem,
-            this.журналToolStripMenuItem,
-            this.выходToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(543, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.strIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.strIn.Location = new System.Drawing.Point(35, 24);
+            this.strIn.Multiline = true;
+            this.strIn.Name = "strIn";
+            this.strIn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.strIn.Size = new System.Drawing.Size(376, 116);
+            this.strIn.TabIndex = 0;
+            this.strIn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textIn_KeyDown);
             // 
-            // транслитерацияToolStripMenuItem
+            // strOut
             // 
-            this.транслитерацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rUENGToolStripMenuItem,
-            this.eNGRUToolStripMenuItem});
-            this.транслитерацияToolStripMenuItem.Name = "транслитерацияToolStripMenuItem";
-            this.транслитерацияToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.транслитерацияToolStripMenuItem.Text = "транслитерация";
+            this.strOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.strOut.Location = new System.Drawing.Point(35, 179);
+            this.strOut.Multiline = true;
+            this.strOut.Name = "strOut";
+            this.strOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.strOut.Size = new System.Drawing.Size(376, 116);
+            this.strOut.TabIndex = 1;
             // 
-            // rUENGToolStripMenuItem
+            // clean
             // 
-            this.rUENGToolStripMenuItem.Name = "rUENGToolStripMenuItem";
-            this.rUENGToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rUENGToolStripMenuItem.Text = "RU - ENG";
+            this.clean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.clean.Location = new System.Drawing.Point(191, 329);
+            this.clean.Name = "clean";
+            this.clean.Size = new System.Drawing.Size(94, 23);
+            this.clean.TabIndex = 2;
+            this.clean.Text = "очистить";
+            this.clean.UseVisualStyleBackColor = true;
+            this.clean.Click += new System.EventHandler(this.clean_Click);
             // 
-            // eNGRUToolStripMenuItem
+            // transliter
             // 
-            this.eNGRUToolStripMenuItem.Name = "eNGRUToolStripMenuItem";
-            this.eNGRUToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eNGRUToolStripMenuItem.Text = "ENG - RU";
+            this.transliter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.transliter.Location = new System.Drawing.Point(317, 329);
+            this.transliter.Name = "transliter";
+            this.transliter.Size = new System.Drawing.Size(94, 23);
+            this.transliter.TabIndex = 3;
+            this.transliter.Text = "RU -> ENG";
+            this.transliter.UseVisualStyleBackColor = true;
+            this.transliter.Click += new System.EventHandler(this.translite_Click);
             // 
-            // журналToolStripMenuItem
+            // engTranslit
             // 
-            this.журналToolStripMenuItem.Name = "журналToolStripMenuItem";
-            this.журналToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.журналToolStripMenuItem.Text = "журнал";
+            this.engTranslit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.engTranslit.Location = new System.Drawing.Point(317, 360);
+            this.engTranslit.Name = "engTranslit";
+            this.engTranslit.Size = new System.Drawing.Size(94, 23);
+            this.engTranslit.TabIndex = 4;
+            this.engTranslit.Text = "ENG -> RU";
+            this.engTranslit.UseVisualStyleBackColor = true;
+            this.engTranslit.Click += new System.EventHandler(this.engTranslit_Click);
             // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.выходToolStripMenuItem.Text = "выход";
-            // 
-            // fMain
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 307);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "fMain";
-            this.Text = "SWIFT";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(447, 395);
+            this.Controls.Add(this.engTranslit);
+            this.Controls.Add(this.transliter);
+            this.Controls.Add(this.clean);
+            this.Controls.Add(this.strOut);
+            this.Controls.Add(this.strIn);
+            this.Name = "Form1";
+            this.Text = "Транслитерация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,12 +113,11 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem транслитерацияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rUENGToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eNGRUToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem журналToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.TextBox strIn;
+        private System.Windows.Forms.TextBox strOut;
+        private System.Windows.Forms.Button clean;
+        private System.Windows.Forms.Button transliter;
+        private System.Windows.Forms.Button engTranslit;
     }
 }
 
