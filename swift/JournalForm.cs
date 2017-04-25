@@ -83,5 +83,30 @@ namespace swift
                 }
             }
         }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            dynamic excel = Activator.CreateInstance(Type.GetTypeFromProgID("Excel.Application"));
+            excel.Visible = true;
+            dynamic workbook = excel.Workbooks.Add();
+            dynamic worksheet = workbook.ActiveSheet; //.Worksheets.Add();
+            worksheet.Application.Worksheets.Add(); //добавить лист
+            //worksheet.Application.Worksheets.Add(); 
+            int totalSheets = worksheet.Application.ActiveWorkbook.Sheets.Count;
+            (worksheet.Application.ActiveSheet).Move(worksheet.Application.Worksheets[totalSheets]);
+            (worksheet.Application.ActiveWorkbook.Sheets[1]).Activate();
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "export";
+            excel.Columns("A:E").ColumnWidth = 15;
+            int str = 0;
+            while (str < tabMess.RowCount)
+            {
+                for (int st = 0; st < 25; st++)
+                {
+                       worksheet.Cells[str+1, st+1] = tabMess.Rows[str].Cells[st];
+                }
+                str++;
+            }
+        }
     }
 }

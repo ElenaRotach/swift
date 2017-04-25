@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tabMess = new System.Windows.Forms.DataGridView();
+            this.export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabMess)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,22 @@
             this.tabMess.Size = new System.Drawing.Size(1352, 517);
             this.tabMess.TabIndex = 0;
             // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(1214, 581);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 1;
+            this.export.Text = "export";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.export_Click);
+            // 
             // JournalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1407, 583);
+            this.ClientSize = new System.Drawing.Size(1407, 636);
+            this.Controls.Add(this.export);
             this.Controls.Add(this.tabMess);
             this.Name = "JournalForm";
             this.Text = "JournalForm";
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tabMess;
+        private System.Windows.Forms.Button export;
     }
 }
