@@ -57,5 +57,11 @@ namespace swift
             JournalForm messForm = new JournalForm();
             messForm.Show();
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            swiftDemon.settingsForm settings = new swiftDemon.settingsForm();
+            settings.Show();
+        }
     }
 }

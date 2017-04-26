@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JournalForm));
             this.tabMess = new System.Windows.Forms.DataGridView();
             this.export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabMess)).BeginInit();
@@ -58,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(1407, 636);
             this.Controls.Add(this.export);
             this.Controls.Add(this.tabMess);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "JournalForm";
             this.Text = "JournalForm";
             this.Load += new System.EventHandler(this.JournalForm_Load);

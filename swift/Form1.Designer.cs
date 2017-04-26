@@ -30,6 +30,7 @@ namespace transliter_RUENGRU
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.strIn = new System.Windows.Forms.TextBox();
             this.strOut = new System.Windows.Forms.TextBox();
             this.clean = new System.Windows.Forms.Button();
@@ -39,8 +40,8 @@ namespace transliter_RUENGRU
             // 
             // strIn
             // 
-            this.strIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.strIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.strIn.Location = new System.Drawing.Point(35, 24);
             this.strIn.Multiline = true;
@@ -52,7 +53,7 @@ namespace transliter_RUENGRU
             // 
             // strOut
             // 
-            this.strOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.strOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.strOut.Location = new System.Drawing.Point(35, 179);
             this.strOut.Multiline = true;
@@ -104,6 +105,7 @@ namespace transliter_RUENGRU
             this.Controls.Add(this.clean);
             this.Controls.Add(this.strOut);
             this.Controls.Add(this.strIn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Транслитерация";
             this.ResumeLayout(false);

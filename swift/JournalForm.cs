@@ -103,7 +103,7 @@ namespace swift
             {
                 for (int st = 0; st < 25; st++)
                 {
-                       worksheet.Cells[str+1, st+1] = tabMess.Rows[str].Cells[st];
+                       worksheet.Cells[str+1, st+1] = tabMess.Rows[str].Cells[st].Value;
                 }
                 str++;
             }
