@@ -111,11 +111,23 @@ namespace swiftDemon
             string p17, string p18, string p19, string p20, string p21, string p22, string p23, string p24, string p25)
         {
             transactionReferenceNumber_20 = p1;
-            valueDate_30V = p2;
-            date_32 = p3;
+            if (p2 != "" && p2 != "01.01.2001 0:00:00")
+            {
+                valueDate_30V = p2;
+            }
+            if (p3 != "" && p3 != "01.01.2001 0:00:00")
+            {
+                date_32 = p3;
+            }
             currency_32 = p4;
-            amount_32 = p5;
-            currency_33B = p6;
+            if (p5 != "" && p5 != "01.01.2001 0:00:00")
+            {
+                amount_32 = p5;
+            }
+            if (p6 != "" && p6 != "01.01.2001 0:00:00")
+            {
+                currency_33B = p6;
+            }
             amount_33B = p7;
             orderingCustomer_50 = p8;
             orderingInstitution_52 = p9;
