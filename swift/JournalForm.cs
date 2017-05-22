@@ -14,9 +14,43 @@ namespace swift
 {
     public partial class JournalForm : Form
     {
+        ContextMenuStrip contextMenuStripJournal = new ContextMenuStrip();
         public JournalForm()
         {
             InitializeComponent();
+            
+            // создаем элементы меню
+            ToolStripMenuItem printMenuItem = new ToolStripMenuItem("Печать");
+            // добавляем элементы в меню
+            contextMenuStripJournal.Items.AddRange(new[] { printMenuItem});
+            // ассоциируем контекстное меню с текстовым полем
+            tabMess.ContextMenuStrip = contextMenuStripJournal;
+            // устанавливаем обработчики событий для меню
+            printMenuItem.Click += printMenuItem_Click;
+            //tabMess.CellMouseClick += TabMess_CellMouseClick;
+            //tabMess.CellContextMenuStripNeeded += TabMess_CellContextMenuStripNeeded;
+        }
+
+        //private void TabMess_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Right)
+        //    {
+        //        tabMess.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+        //        //tabMess.CellContextMenuStripNeeded();
+        //    }
+        //}
+
+        //private void TabMess_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        //{
+        //    if (e.ColumnIndex != -1 && e.RowIndex != -1)
+        //    {
+        //        contextMenuStripJournal.Show(Cursor.Position);
+        //    }
+        //}
+
+        private void printMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(tabMess.CurrentRow.Index.ToString());
         }
 
         private void JournalForm_Load(object sender, EventArgs e)
