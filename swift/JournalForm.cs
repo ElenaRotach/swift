@@ -89,10 +89,39 @@ namespace swift
 
             if (allMess.Count > 0)
             {
-                for (int st = 0; st < 27; st++)
-                {
-                    tabMess.Columns.Add(st.ToString(), st.ToString());
-                }
+                tabMess.Columns.Add("0", "transactionReferenceNumber_20");
+                tabMess.Columns.Add("1", "valueDate_30V");
+                tabMess.Columns.Add("2", "date_32");
+                tabMess.Columns.Add("3", "currency_32");
+                tabMess.Columns.Add("4", "amount_32");
+                tabMess.Columns.Add("5", "currency_33B");
+                tabMess.Columns.Add("6", "amount_33B");
+                tabMess.Columns.Add("7", "orderingCustomer_50");
+                tabMess.Columns.Add("8", "orderingInstitution_52");
+                tabMess.Columns.Add("9", "senderCorrespondent_53");
+                tabMess.Columns.Add("10", "receiverCorrespondent_54");
+                tabMess.Columns.Add("11", "intermediaryInstitution_56");
+                tabMess.Columns.Add("12", "accountWithInstitution_57");
+                tabMess.Columns.Add("13", "beneficiaryInstitution_58");
+                tabMess.Columns.Add("14", "beneficiaryCustomer_59");
+                tabMess.Columns.Add("15", "processingCharacteristic");
+                tabMess.Columns.Add("16", "mess_direction");
+                tabMess.Columns.Add("17", "comment");
+                tabMess.Columns.Add("18", "dateTime_mess");
+                tabMess.Columns.Add("19", "referenceMess");
+                tabMess.Columns.Add("20", "fin");
+                tabMess.Columns.Add("21", "swiftNumberBankKontragent");
+                tabMess.Columns.Add("22", "naimBankKontragent");
+                tabMess.Columns.Add("23", "thread");
+                tabMess.Columns.Add("24", "fileName");
+                tabMess.Columns.Add("25", "direction");
+                tabMess.Columns.Add("26", "id");
+
+                //for (int st = 1; st < 27; st++)
+                //{
+                //    tabMess.Columns.Add(st.ToString(), st.ToString());
+                //}
+
                 tabMess.Rows.Add(allMess.Count);
                 int i = 0;
                 foreach (swiftMess_str msg in allMess)
