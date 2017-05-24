@@ -33,6 +33,8 @@ namespace swiftDemon
         public string naimBankKontragent = "";
         public string thread = "";
         public string fileName = "";
+        public string direction = "";
+        public string id = "";
         public swiftMess(string strMess, string fn)
         {
             if(strMess.Length>0)
@@ -107,8 +109,10 @@ namespace swiftDemon
         public string naimBankKontragent = "";
         public string thread = "";
         public string fileName = "";
+        public string direction = "";
+        public string id = "";
         public swiftMess_str(string p1, string p2, string p3, string p4, string p5, string p6, string p7, string p8, string p9, string p10, string p11, string p12, string p13, string p14, string p15, string p16,
-            string p17, string p18, string p19, string p20, string p21, string p22, string p23, string p24, string p25)
+            string p17, string p18, string p19, string p20, string p21, string p22, string p23, string p24, string p25, string p26, string p27)
         {
             transactionReferenceNumber_20 = p1;
             if (p2 != "" && p2 != "01.01.2001 0:00:00")
@@ -147,6 +151,8 @@ namespace swiftDemon
             naimBankKontragent = p23;
             thread = p24;
             fileName = p25;
+            direction = p26;
+            id = p27;
         }
     }
 }

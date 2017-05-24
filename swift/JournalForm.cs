@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +52,15 @@ namespace swift
 
         private void printMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(tabMess.CurrentRow.Index.ToString());
+            int index = tabMess.CurrentRow.Index;
+            File.Delete(Environment.CurrentDirectory + @"\tmp.txt");
+            string curFile = Environment.CurrentDirectory + @"\tmp.txt";
+            using (StreamWriter sw = File.AppendText(curFile))
+            {
+                sw.WriteLine(tabMess.Rows[index].Cells[23].Value);
+                sw.Close();
+            }
+            Process.Start("C:\\Windows\\System32\\notepad.exe", curFile.Trim());
         }
 
         private void JournalForm_Load(object sender, EventArgs e)
@@ -74,12 +84,12 @@ namespace swift
                     myOleDbDataReader.GetValue(12).ToString(), myOleDbDataReader.GetValue(13).ToString(), myOleDbDataReader.GetValue(14).ToString(), myOleDbDataReader.GetValue(15).ToString(),
                     myOleDbDataReader.GetValue(16).ToString(), myOleDbDataReader.GetValue(17).ToString(), myOleDbDataReader.GetValue(19).ToString(), myOleDbDataReader.GetValue(19).ToString(),
                     myOleDbDataReader.GetValue(20).ToString(), myOleDbDataReader.GetValue(21).ToString(), myOleDbDataReader.GetValue(22).ToString(), myOleDbDataReader.GetValue(23).ToString(),
-                    myOleDbDataReader.GetValue(24).ToString()));
+                    myOleDbDataReader.GetValue(24).ToString(), myOleDbDataReader.GetValue(25).ToString(), myOleDbDataReader.GetValue(26).ToString()));
             }
 
             if (allMess.Count > 0)
             {
-                for (int st = 0; st < 25; st++)
+                for (int st = 0; st < 27; st++)
                 {
                     tabMess.Columns.Add(st.ToString(), st.ToString());
                 }
@@ -112,7 +122,8 @@ namespace swift
                     tabMess.Rows[i].Cells[22].Value = msg.naimBankKontragent;
                     tabMess.Rows[i].Cells[23].Value = msg.thread;
                     tabMess.Rows[i].Cells[24].Value = msg.fileName;
-
+                    tabMess.Rows[i].Cells[25].Value = msg.direction;
+                    tabMess.Rows[i].Cells[26].Value = msg.id;
                     i++;
                 }
             }
@@ -135,7 +146,7 @@ namespace swift
             int str = 0;
             while (str < tabMess.RowCount)
             {
-                for (int st = 0; st < 25; st++)
+                for (int st = 0; st < 23; st++)
                 {
                        worksheet.Cells[str+1, st+1] = tabMess.Rows[str].Cells[st].Value;
                 }
