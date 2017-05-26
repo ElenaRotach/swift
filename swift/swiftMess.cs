@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace swiftDemon
+namespace swift
 {
     class swiftMess
     {
@@ -82,7 +82,7 @@ namespace swiftDemon
         }
     }
 
-    class swiftMess_str
+    public class swiftMess_str
     {
         public string transactionReferenceNumber_20 = "";
         public string valueDate_30V = "";

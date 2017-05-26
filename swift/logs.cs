@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace swiftDemon
+namespace swift
 {
     interface ILogs
     {
@@ -74,6 +74,32 @@ namespace swiftDemon
             }
             //logs log = new logs();
             logs.logEntry(str + '\n');
+        }
+        public static void saveParam(string paramName, string value, string id)
+        {
+            try
+            {
+                if (paramName != "valueDate_30V" && paramName != "date_32" && paramName != "dateTime_mess")
+                {
+                    if (paramName == "amount_32" || paramName == "amount_33B")
+                    {
+                        if (value == "") { value = "0"; }
+                        value = value.Replace(",", ".");
+                        string sql = @"UPDATE mess SET " + paramName + " = " + value + " where id=" + id + "; ";
+                        connectionDB.addDB(sql);
+                    }
+                    else
+                    {
+                        string sql = @"UPDATE mess SET " + paramName + " = '" + value + "' where id=" + id + "; ";
+                        connectionDB.addDB(sql);
+                    }
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Не возможно сохранить изменения");
+            }
         }
     }
 }

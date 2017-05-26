@@ -69,8 +69,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView tabMess;
         private System.Windows.Forms.Button export;
+        public System.Windows.Forms.DataGridView tabMess;
     }
 }

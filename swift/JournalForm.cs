@@ -23,14 +23,25 @@ namespace swift
             
             // создаем элементы меню
             ToolStripMenuItem printMenuItem = new ToolStripMenuItem("Печать");
+            ToolStripMenuItem editMenuItem = new ToolStripMenuItem("Изменить");
             // добавляем элементы в меню
-            contextMenuStripJournal.Items.AddRange(new[] { printMenuItem});
+            contextMenuStripJournal.Items.AddRange(new[] { printMenuItem, editMenuItem});
             // ассоциируем контекстное меню с текстовым полем
             tabMess.ContextMenuStrip = contextMenuStripJournal;
             // устанавливаем обработчики событий для меню
             printMenuItem.Click += printMenuItem_Click;
+            editMenuItem.Click += EditMenuItem_Click;
             //tabMess.CellMouseClick += TabMess_CellMouseClick;
             //tabMess.CellContextMenuStripNeeded += TabMess_CellContextMenuStripNeeded;
+        }
+
+        private void EditMenuItem_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            int index = tabMess.CurrentRow.Index;
+            //swiftMess_str msg = new swiftMess_str(tabMess.Rows[index].Cells[0].Value.ToString(), tabMess.Rows[index].Cells[1].Value.ToString(), tabMess.Rows[index].Cells[2].Value.ToString(), tabMess.Rows[index].Cells[3].Value.ToString(), tabMess.Rows[index].Cells[4].Value.ToString(), tabMess.Rows[index].Cells[5].Value.ToString(), tabMess.Rows[index].Cells[6].Value.ToString(), tabMess.Rows[index].Cells[7].Value.ToString(), tabMess.Rows[index].Cells[8].Value.ToString(), tabMess.Rows[index].Cells[9].Value.ToString(), tabMess.Rows[index].Cells[10].Value.ToString(), tabMess.Rows[index].Cells[11].Value.ToString(), tabMess.Rows[index].Cells[12].Value.ToString(), tabMess.Rows[index].Cells[13].Value.ToString(), tabMess.Rows[index].Cells[14].Value.ToString(), tabMess.Rows[index].Cells[15].Value.ToString(), tabMess.Rows[index].Cells[16].Value.ToString(), tabMess.Rows[index].Cells[17].Value.ToString(), tabMess.Rows[index].Cells[18].Value.ToString(), tabMess.Rows[index].Cells[19].Value.ToString(), tabMess.Rows[index].Cells[20].Value.ToString(), tabMess.Rows[index].Cells[21].Value.ToString(), tabMess.Rows[index].Cells[22].Value.ToString(), tabMess.Rows[index].Cells[23].Value.ToString(), tabMess.Rows[index].Cells[24].Value.ToString(), tabMess.Rows[index].Cells[25].Value.ToString(), tabMess.Rows[index].Cells[26].Value.ToString());
+            editProps editPropWindow = new editProps(this, index, tabMess.CurrentCell.ColumnIndex);
+            editPropWindow.Show();
         }
 
         //private void TabMess_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -92,9 +103,9 @@ namespace swift
                 tabMess.Columns.Add("0", "transactionReferenceNumber_20");
                 tabMess.Columns.Add("1", "valueDate_30V");
                 tabMess.Columns.Add("2", "date_32");
-                tabMess.Columns.Add("3", "currency_32");
+                tabMess.Columns.Add("3", "сurrency_32");
                 tabMess.Columns.Add("4", "amount_32");
-                tabMess.Columns.Add("5", "currency_33B");
+                tabMess.Columns.Add("5", "сurrency_33B");
                 tabMess.Columns.Add("6", "amount_33B");
                 tabMess.Columns.Add("7", "orderingCustomer_50");
                 tabMess.Columns.Add("8", "orderingInstitution_52");
